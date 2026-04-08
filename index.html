@@ -217,6 +217,16 @@
       color: var(--accent-dark);
     }
 
+    .footer-email {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .footer-email a {
+      font-weight: 600;
+    }
+
     @media (max-width: 980px) {
       .hero {
         grid-template-columns: 1fr;
@@ -246,7 +256,10 @@
             <strong>Ready for your next trip?</strong>
             Join TokTravel and keep every place from videos in one beautiful list.
           </p>
-          <a class="btn btn-primary" href="#">Get early access</a>
+          <a
+            class="btn btn-primary"
+            href="mailto:toktravel.app@gmail.com?subject=Early%20access%20%E2%80%94%20TokTravel&amp;body=Hi%2C%0A%0AI%27d%20like%20early%20access%20to%20TokTravel.%0A%0A"
+            >Get early access</a>
         </section>
       </div>
       <div class="phone-grid">
@@ -281,6 +294,9 @@
   <footer class="wrap">
     <span>© 2026 TokTravel. Made for travelers who save too many reels.</span>
     <a href="privacy.html">Privacy Policy</a>
+    <p class="footer-email">
+      <a href="mailto:toktravel.app@gmail.com">toktravel.app@gmail.com</a>
+    </p>
   </footer>
 </body>
 </html>
