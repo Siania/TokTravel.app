@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank you — TokTravel</title>
+  <meta name="description" content="You are on the TokTravel waitlist." />
+  <style>
+    :root {
+      --bg-top: #f5f1ff;
+      --bg-bottom: #eaf8ff;
+      --card: rgba(255, 255, 255, 0.84);
+      --text: #141319;
+      --muted: #67657a;
+      --accent: #ff3f86;
+      --accent-dark: #ef2d78;
+      --border: rgba(255, 255, 255, 0.72);
+      --shadow: 0 18px 48px rgba(71, 23, 109, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrap {
+      width: min(560px, 92vw);
+      margin: 0 auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 32px 0;
+    }
+
+    header {
+      padding: 24px 0 0;
+      text-align: center;
+    }
+
+    .brand {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .card {
+      margin-top: 28px;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 36px 32px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 38px);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    .btn {
+      margin-top: 28px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 26px;
+      font-size: 16px;
+      font-weight: 650;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      box-shadow: 0 10px 20px rgba(255, 63, 134, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap" style="padding-bottom: 0;">
+    <a href="index.html" class="brand">Tok<span>Travel</span></a>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h1>You’re on the list</h1>
+      <p>
+        Thanks for leaving your email. We’ll notify you when TokTravel takes off.
+      </p>
+      <a class="btn" href="index.html">Back to home</a>
+    </section>
+  </main>
+</body>
+</html>
