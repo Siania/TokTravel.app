@@ -183,6 +183,45 @@
       padding: 24px;
     }
 
+    .promo-waitlist {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .promo-waitlist .promo-waitlist-copy {
+      max-width: 100%;
+    }
+
+    .waitlist-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+      width: 100%;
+    }
+
+    .waitlist-form input[type="email"] {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(103, 101, 122, 0.35);
+      background: rgba(255, 255, 255, 0.95);
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .waitlist-form input[type="email"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 63, 134, 0.2);
+    }
+
+    .waitlist-form button {
+      cursor: pointer;
+      border: 0;
+    }
+
     .promo p {
       margin: 0;
       color: var(--muted);
@@ -251,15 +290,32 @@
           Paste a TikTok, Instagram Reel, or YouTube Shorts link.
           TokTravel finds the spots and saves everything you actually want to visit.
         </p>
-        <section class="promo promo-inline">
-          <p>
-            <strong>Ready for your next trip?</strong>
-            Join TokTravel and keep every place from videos in one beautiful list.
-          </p>
-          <a
-            class="btn btn-primary"
-            href="mailto:toktravel.app@gmail.com?subject=Early%20access%20%E2%80%94%20TokTravel&amp;body=Hi%2C%0A%0AI%27d%20like%20early%20access%20to%20TokTravel.%0A%0A"
-            >Get early access</a>
+        <section class="promo promo-inline promo-waitlist">
+          <div class="promo-waitlist-copy">
+            <p>
+              <strong>Ready for your next trip?</strong>
+              Leave your email in the form below and we’ll notify you when TokTravel takes off.
+            </p>
+          </div>
+          <form
+            class="waitlist-form"
+            action="https://formsubmit.co/toktravel.app@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="TokTravel waitlist" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://toktravel.app/?thanks=1" />
+            <input
+              type="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="you@email.com"
+              aria-label="Email for launch notification"
+            />
+            <button class="btn btn-primary" type="submit">Notify me</button>
+          </form>
         </section>
       </div>
       <div class="phone-grid">
