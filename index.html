@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TokTravel - Your trip list from videos</title>
+  <meta
+    name="description"
+    content="Save travel places from TikTok, Reels, and Shorts in one organized trip list."
+  />
+  <style>
+    :root {
+      --bg-top: #f5f1ff;
+      --bg-bottom: #eaf8ff;
+      --card: rgba(255, 255, 255, 0.82);
+      --text: #141319;
+      --muted: #67657a;
+      --accent: #ff3f86;
+      --accent-dark: #ef2d78;
+      --border: rgba(255, 255, 255, 0.72);
+      --shadow: 0 18px 48px rgba(71, 23, 109, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      padding: 20px 0;
+    }
+
+    .brand {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+      padding: 20px 0 42px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+    }
+
+    .sub {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 20px);
+      max-width: 560px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: 16px;
+      font-weight: 650;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      box-shadow: 0 10px 20px rgba(255, 63, 134, 0.35);
+    }
+
+    .btn-secondary {
+      color: #2e2a38;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--border);
+    }
+
+    .phone-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .phone {
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 28px;
+      padding: 10px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(7px);
+    }
+
+    .phone img {
+      width: 100%;
+      border-radius: 22px;
+      display: block;
+    }
+
+    .section {
+      margin-top: 22px;
+      margin-bottom: 52px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(64, 22, 96, 0.08);
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .promo {
+      margin: 0 0 42px;
+      border-radius: 28px;
+      background: linear-gradient(130deg, rgba(255, 255, 255, 0.8), rgba(246, 242, 255, 0.62));
+      border: 1px solid var(--border);
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .promo-inline {
+      margin: 28px 0 0;
+      padding: 24px;
+    }
+
+    .promo p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .promo strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 6px;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+    }
+
+    footer {
+      color: #7a7791;
+      padding: 8px 0 20px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #5c5872;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: var(--accent-dark);
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a href="#" class="brand">Tok<span>Travel</span></a>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Your trip list, straight from videos.</h1>
+        <p class="sub">
+          Paste a TikTok, Instagram Reel, or YouTube Shorts link.
+          TokTravel finds the spots and saves everything you actually want to visit.
+        </p>
+        <section class="promo promo-inline">
+          <p>
+            <strong>Ready for your next trip?</strong>
+            Join TokTravel and keep every place from videos in one beautiful list.
+          </p>
+          <a class="btn btn-primary" href="#">Get early access</a>
+        </section>
+      </div>
+      <div class="phone-grid">
+        <div class="phone"><img src="assets/app-feed.png" alt="TokTravel app feed screen" /></div>
+        <div class="phone"><img src="assets/app-lists.png" alt="TokTravel app lists screen" /></div>
+      </div>
+    </section>
+
+    <section class="section cards">
+      <article class="card">
+        <h3>Import from any short video</h3>
+        <p>
+          Drop a link and quickly collect hotels, cafes, beaches, and hidden gems from creators.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Organize your travel ideas</h3>
+        <p>
+          Group by destination, food type, or personal lists so planning stays clean and fast.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Build trips with one tap</h3>
+        <p>
+          Turn inspiration into actionable lists you can revisit before every journey.
+        </p>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <span>© 2026 TokTravel. Made for travelers who save too many reels.</span>
+    <a href="privacy.html">Privacy Policy</a>
+  </footer>
+</body>
+</html>
