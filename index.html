@@ -14,15 +14,18 @@
   />
   <style>
     :root {
-      --bg-top: #f5f1ff;
-      --bg-bottom: #eaf8ff;
-      --card: rgba(255, 255, 255, 0.82);
-      --text: #141319;
-      --muted: #67657a;
-      --accent: #ff3f86;
-      --accent-dark: #ef2d78;
-      --border: rgba(255, 255, 255, 0.72);
-      --shadow: 0 18px 48px rgba(71, 23, 109, 0.14);
+      --sand: #f5efe3;
+      --paper: #fbf7ee;
+      --ink: #2b241b;
+      --muted: #6d6358;
+      --coral: #ff5a36;
+      --coral-dark: #e84a2f;
+      --leaf: #5ba84a;
+      --sky: #3b9cc9;
+      --line: rgba(43, 36, 27, 0.12);
+      --card: rgba(251, 247, 238, 0.94);
+      --glass: rgba(251, 247, 238, 0.55);
+      --shadow: 0 20px 46px rgba(89, 63, 34, 0.14);
     }
 
     * {
@@ -31,9 +34,12 @@
 
     body {
       margin: 0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: var(--text);
-      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 182, 38, 0.22) 0%, rgba(255, 182, 38, 0) 42%),
+        radial-gradient(circle at 85% 75%, rgba(59, 156, 201, 0.2) 0%, rgba(59, 156, 201, 0) 45%),
+        linear-gradient(180deg, var(--paper) 0%, var(--sand) 100%);
       min-height: 100vh;
     }
 
@@ -43,19 +49,19 @@
     }
 
     .site-header {
-      padding: 20px 0;
+      padding: 24px 0 14px;
     }
 
     .brand {
-      font-size: 30px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      font-size: 31px;
+      font-weight: 750;
+      letter-spacing: -0.02em;
       text-decoration: none;
-      color: var(--text);
+      color: var(--ink);
     }
 
     .brand span {
-      color: var(--accent);
+      color: var(--coral);
     }
 
     .hero {
@@ -63,14 +69,17 @@
       grid-template-columns: 1fr 1fr;
       gap: 34px;
       align-items: center;
-      padding: 20px 0 42px;
+      padding: 18px 0 42px;
     }
 
     h1 {
       margin: 0 0 16px;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 600;
       font-size: clamp(40px, 7vw, 72px);
       line-height: 0.95;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.02em;
     }
 
     .sub {
@@ -78,13 +87,7 @@
       color: var(--muted);
       font-size: clamp(16px, 2vw, 20px);
       max-width: 560px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 28px;
+      line-height: 1.5;
     }
 
     .btn {
@@ -106,14 +109,8 @@
 
     .btn-primary {
       color: #fff;
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      box-shadow: 0 10px 20px rgba(255, 63, 134, 0.35);
-    }
-
-    .btn-secondary {
-      color: #2e2a38;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--coral), var(--coral-dark));
+      box-shadow: 0 10px 20px rgba(232, 74, 47, 0.35);
     }
 
     .phone-grid {
@@ -123,12 +120,12 @@
     }
 
     .phone {
-      background: rgba(255, 255, 255, 0.62);
-      border: 1px solid rgba(255, 255, 255, 0.95);
+      background: var(--glass);
+      border: 1px solid rgba(255, 255, 255, 0.7);
       border-radius: 28px;
       padding: 10px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(7px);
+      backdrop-filter: blur(22px) saturate(140%);
     }
 
     .phone img {
@@ -150,36 +147,38 @@
 
     .card {
       border-radius: 22px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       background: var(--card);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(64, 22, 96, 0.08);
+      box-shadow: 0 10px 30px rgba(89, 63, 34, 0.09);
       padding: 22px;
     }
 
     .card h3 {
       margin: 0 0 8px;
       font-size: 20px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
+      color: var(--ink);
     }
 
     .card p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .promo {
       margin: 0 0 42px;
       border-radius: 28px;
-      background: linear-gradient(130deg, rgba(255, 255, 255, 0.8), rgba(246, 242, 255, 0.62));
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      background: var(--glass);
+      backdrop-filter: blur(22px) saturate(140%);
       padding: 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
+      box-shadow: var(--shadow);
     }
 
     .promo-inline {
@@ -209,16 +208,21 @@
       min-width: 200px;
       padding: 14px 18px;
       border-radius: 999px;
-      border: 1px solid rgba(103, 101, 122, 0.35);
-      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
       font-size: 16px;
       font-family: inherit;
       outline: none;
     }
 
+    .waitlist-form input[type="email"]::placeholder {
+      color: #95887a;
+    }
+
     .waitlist-form input[type="email"]:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(255, 63, 134, 0.2);
+      border-color: var(--coral);
+      box-shadow: 0 0 0 3px rgba(255, 90, 54, 0.22);
     }
 
     .waitlist-form button {
@@ -230,18 +234,22 @@
       margin: 0;
       color: var(--muted);
       font-size: 17px;
+      line-height: 1.55;
     }
 
     .promo strong {
       display: block;
-      color: var(--text);
+      color: var(--ink);
       margin-bottom: 6px;
-      font-size: 26px;
-      letter-spacing: -0.02em;
+      font-size: 30px;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: -0.01em;
     }
 
     footer {
-      color: #7a7791;
+      color: #7f7365;
       padding: 8px 0 20px;
       font-size: 14px;
       display: flex;
@@ -251,13 +259,13 @@
     }
 
     footer a {
-      color: #5c5872;
+      color: #6c6155;
       text-decoration: none;
       font-weight: 600;
     }
 
     footer a:hover {
-      color: var(--accent-dark);
+      color: var(--coral-dark);
     }
 
     .footer-email {
